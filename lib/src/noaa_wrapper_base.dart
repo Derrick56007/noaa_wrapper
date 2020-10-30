@@ -25,15 +25,19 @@ abstract class NOAA {
   }
 
   void dateBeginAndRange(String begin, int range) {
-    params['date'] = 'begin_date=$begin&range=$range';
+    params['date'] = 'begin_date=$begin';
+
+    dateRange(range);
   }
 
   void dateEndAndRange(String begin, int range) {
-    params['date'] = 'end_date=$begin&range=$range';
+    params['date'] = 'end_date=$begin';
+
+    dateRange(range);
   }
 
   void dateRange(int range) {
-    params['date'] = 'range=$range';
+    params['range'] = 'range=$range';
   }
 
   void product(String product) {

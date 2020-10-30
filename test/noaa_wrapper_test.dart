@@ -22,24 +22,4 @@ void main() {
       print(await noaa.get());
     });
   });
-
-  group('2 A group of tests', () {
-    NOAAClient noaa;
-
-    setUp(() {
-      noaa = NOAAClient();
-    });
-
-    test('First Test', () async {
-      noaa
-        ..date('today')
-        ..station('8454000')
-        ..product('water_temperature')
-        ..units('english')
-        ..timeZone('gmt')
-        ..format('csv');
-
-      print(await noaa.get());
-    });
-  });
 }

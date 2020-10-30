@@ -11,13 +11,15 @@ void main() async {
     ..units('english')
     ..timeZone('gmt')
     ..datum('STND')
-    ..format('json');
+    ..format('csv');
 
   final data = await noaa.get();
-  final m = jsonDecode(data);
-  for (final row in m['data']) {
-    print(row);
-  }
+  // final m = jsonDecode(data);
+  // for (final row in m['data']) {
+  //   print(row);
+  // }
+
+  print(data);
 
   // var fileCopy = await File('data/data.json').writeAsString(data);
   // print(await fileCopy.exists());
