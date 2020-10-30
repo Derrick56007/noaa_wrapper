@@ -1,15 +1,8 @@
-import 'dart:convert';
-import 'dart:io';
-
-class NOAA {
-  final HttpClient _client;
-
+abstract class NOAA {
   static const baseUrl =
       'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?';
 
   final params = {};
-
-  NOAA({HttpClient httpClient}) : _client = httpClient ?? HttpClient();
 
   void clearParams() {
     params.clear();
@@ -150,14 +143,5 @@ class NOAA {
     params['application'] = 'application=$app';
   }
 
-  Future<String> get() async {
-    final url = '$baseUrl${params.values.join("&")}';
-
-    print(url);
-
-    final response =
-        await _client.getUrl(Uri.parse(url)).then((request) => request.close());
-
-    return await response.transform(Utf8Decoder()).first;
-  }
+  Future<String> get();
 }

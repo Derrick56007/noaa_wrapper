@@ -2,6 +2,8 @@
 .dart_tool/
 .packages
 
+*.csv
+
 # Omit commiting pubspec.lock for library packages:
 # https://dart.dev/guides/libraries/private-files#pubspeclock
 pubspec.lock
@@ -11,3 +13,5 @@ build/
 
 # Directory created by dartdoc
 doc/api/
+
+data/
