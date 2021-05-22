@@ -1,5 +1,4 @@
-import 'package:noaa_wrapper/noaa_wrapper_client.dart';
-import 'package:noaa_wrapper/noaa_wrapper_server.dart';
+import 'package:noaa_wrapper/server_v1.dart';
 import 'package:test/test.dart';
 
 void main() {

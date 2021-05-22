@@ -1,21 +1,22 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'noaa_wrapper_base.dart';
+import 'base.dart';
 
-class NOAAServer extends NOAA {
+class NOAAServer extends NOAAv1 {
   final HttpClient _client;
 
   NOAAServer({HttpClient httpClient}) : _client = httpClient ?? HttpClient();
 
   @override
   Future<String> get() async {
-    final url = '${NOAA.baseUrl}${params.values.join("&")}';
+    final url = '${NOAAv1.baseUrl}${params.values.join("&")}';
 
     print(url);
 
-    final response =
-        await _client.getUrl(Uri.parse(url)).then((request) => request.close());
+    final response = await _client.getUrl(Uri.parse(url)).then((request) {
+      return request.close();
+    });
 
     return await response.transform(Utf8Decoder()).first;
   }

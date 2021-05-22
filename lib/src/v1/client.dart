@@ -1,11 +1,11 @@
 import 'dart:html';
 
-import 'noaa_wrapper_base.dart';
+import 'base.dart';
 
-class NOAAClient extends NOAA {
+class NOAAClient extends NOAAv1 {
   @override
   Future<String> get() async {
-    final url = '${NOAA.baseUrl}${params.values.join("&")}';
+    final url = '${NOAAv1.baseUrl}${params.values.join("&")}';
 
     print(url);
 

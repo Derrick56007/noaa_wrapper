@@ -1,8 +1,14 @@
-abstract class NOAA {
+abstract class NOAAv1 {
   static const baseUrl =
       'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?';
 
+  // 2: 'https://www.ncdc.noaa.gov/cdo-web/api/v2/stations',
+
   final params = {};
+
+  // int version = 1;
+
+  // String token = '';
 
   void clearParams() {
     params.clear();
@@ -13,7 +19,7 @@ abstract class NOAA {
   }
 
   void date(String d) {
-    const validParams = ['today', 'recent', 'latest'];
+    const validParams = {'today', 'recent', 'latest'};
 
     assert(validParams.contains(d));
 
@@ -41,7 +47,7 @@ abstract class NOAA {
   }
 
   void product(String product) {
-    const validProducts = [
+    const validProducts = {
       'air_gap',
       'air_pressure',
       'air_temperature',
@@ -62,7 +68,7 @@ abstract class NOAA {
       'water_level',
       'water_temperature',
       'wind'
-    ];
+    };
 
     assert(validProducts.contains(product));
 
@@ -70,7 +76,7 @@ abstract class NOAA {
   }
 
   void datum(String datum) {
-    const list = [
+    const list = {
       'CRD',
       'IGLD',
       'LWD',
@@ -82,7 +88,7 @@ abstract class NOAA {
       'MLLW',
       'NAVD',
       'STND'
-    ];
+    };
     const validDatums = list;
 
     assert(validDatums.contains(datum));
@@ -91,7 +97,7 @@ abstract class NOAA {
   }
 
   void velocityType(String velType) {
-    const validVelTypes = ['speed_dir', 'default'];
+    const validVelTypes = {'speed_dir', 'default'};
 
     assert(validVelTypes.contains(velType));
 
@@ -99,7 +105,7 @@ abstract class NOAA {
   }
 
   void units(String units) {
-    const validUnits = ['metric', 'english'];
+    const validUnits = {'metric', 'english'};
 
     assert(validUnits.contains(units));
 
@@ -107,7 +113,7 @@ abstract class NOAA {
   }
 
   void timeZone(String timeZone) {
-    const validTimeZones = ['gmt', 'lst', 'lst_ldt'];
+    const validTimeZones = {'gmt', 'lst', 'lst_ldt'};
 
     assert(validTimeZones.contains(timeZone));
 
@@ -115,7 +121,7 @@ abstract class NOAA {
   }
 
   void format(String format) {
-    const validFormats = ['json', 'xml', 'csv'];
+    const validFormats = {'json', 'xml', 'csv'};
 
     assert(validFormats.contains(format));
 
@@ -123,7 +129,7 @@ abstract class NOAA {
   }
 
   void interval(String interval) {
-    const validIntervals = [
+    const validIntervals = {
       'h',
       'hilo',
       '1',
@@ -132,7 +138,7 @@ abstract class NOAA {
       '30',
       '60',
       'MAX_SLACK'
-    ];
+    };
 
     assert(validIntervals.contains(interval));
 

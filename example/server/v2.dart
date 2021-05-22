@@ -1,17 +1,10 @@
-import 'dart:convert';
-import 'dart:io';
 
-import 'package:noaa_wrapper/noaa_wrapper_server.dart';
+import 'package:noaa_wrapper/server_v2.dart';
 
 void main() async {
-  final noaa = NOAAServer()
-    ..date('today')
-    ..station('8454000')
-    ..product('water_level')
-    ..units('english')
-    ..timeZone('gmt')
-    ..datum('STND')
-    ..format('csv');
+  final noaa = NOAAServer('')
+    ..setEndPoint('/stations');
+  // ..setToken('GZXebdoNgLZXjAwOvVdZwhgZJGYKFbwr');
 
   final data = await noaa.get();
   // final m = jsonDecode(data);
