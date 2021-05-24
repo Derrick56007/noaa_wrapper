@@ -6,7 +6,7 @@ import 'base.dart';
 class NOAAServer extends NOAAv1 {
   final HttpClient _client;
 
-  NOAAServer({HttpClient httpClient}) : _client = httpClient ?? HttpClient();
+  NOAAServer({HttpClient? httpClient}) : _client = httpClient ?? HttpClient();
 
   @override
   Future<String> get() async {

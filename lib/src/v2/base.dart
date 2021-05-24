@@ -33,5 +33,5 @@ abstract class NOAAv2 {
     endPoint = e;
   }
 
-  Future<String> get();
+  Future<String?> get();
 }

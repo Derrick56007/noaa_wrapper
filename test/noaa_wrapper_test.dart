@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('A group of tests', () {
-    NOAAServer noaa;
+    late NOAAServer noaa;
 
     setUp(() {
       noaa = NOAAServer();

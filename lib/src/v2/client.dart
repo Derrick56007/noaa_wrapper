@@ -6,7 +6,7 @@ class NOAAClient extends NOAAv2 {
   NOAAClient(String token) : super(token);
 
   @override
-  Future<String> get() async {
+  Future<String?> get() async {
     final url = '${NOAAv2.baseUrl}$endPoint${params.values.join("&")}';
 
     print(url);

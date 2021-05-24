@@ -1,9 +1,11 @@
+import 'dart:convert';
+import 'dart:io';
 
 import 'package:noaa_wrapper/server_v2.dart';
 
 void main() async {
-  final noaa = NOAAServer('')
-    ..setEndPoint('/stations');
+  final noaa = NOAAServer('GZXebdoNgLZXjAwOvVdZwhgZJGYKFbwr')
+    ..setEndPoint('/datatypes');
   // ..setToken('GZXebdoNgLZXjAwOvVdZwhgZJGYKFbwr');
 
   final data = await noaa.get();

@@ -153,5 +153,5 @@ abstract class NOAAv1 {
     params['application'] = 'application=$app';
   }
 
-  Future<String> get();
+  Future<String?> get();
 }

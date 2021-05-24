@@ -4,7 +4,7 @@ import 'base.dart';
 
 class NOAAClient extends NOAAv1 {
   @override
-  Future<String> get() async {
+  Future<String?> get() async {
     final url = '${NOAAv1.baseUrl}${params.values.join("&")}';
 
     print(url);
